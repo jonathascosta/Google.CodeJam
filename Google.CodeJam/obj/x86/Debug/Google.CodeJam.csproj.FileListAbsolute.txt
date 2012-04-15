@@ -1,5 +1,0 @@
-C:\Users\Jonathas\Google.CodeJam\Google.CodeJam\bin\Debug\Google.CodeJam.exe
-C:\Users\Jonathas\Google.CodeJam\Google.CodeJam\bin\Debug\Google.CodeJam.pdb
-C:\Users\Jonathas\Google.CodeJam\Google.CodeJam\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\Jonathas\Google.CodeJam\Google.CodeJam\obj\x86\Debug\Google.CodeJam.exe
-C:\Users\Jonathas\Google.CodeJam\Google.CodeJam\obj\x86\Debug\Google.CodeJam.pdb
