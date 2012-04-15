@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Google.CodeJam.Support;
 
-namespace Google.CodeJam
+namespace Google.CodeJam._2012.QualificationRound
 {
     class DancingWithTheGooglers : ISolver
     {

@@ -1,10 +1,11 @@
 ﻿using Google.CodeJam.Support;
+using System.IO;
 
-namespace Google.CodeJam
+namespace Google.CodeJam._2012.QualificationRound
 {
     class SpeakingInTongues : ISolver
     {
-        public void Solve(System.IO.StreamWriter writer, System.IO.StreamReader reader)
+        public void Solve(StreamWriter writer, StreamReader reader)
         {
             char[] english = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ' };
             string googlerese = "ynficwlbkuomxsevzpdrjgthaq ";

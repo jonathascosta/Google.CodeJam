@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Google.CodeJam.Support;
+using System.IO;
 
 namespace Google.CodeJam._2012.QualificationRound
 {
     class RecycledNumbers : ISolver
     {
-        public void Solve(System.IO.StreamWriter writer, System.IO.StreamReader reader)
+        public void Solve(StreamWriter writer, StreamReader reader)
         {
             int T = int.Parse(reader.ReadLine());
             for (int i = 0; i < T; i++)

@@ -1,5 +1,4 @@
 ﻿using System.IO;
-using Google.CodeJam._2012.QualificationRound;
 
 namespace Google.CodeJam
 {
@@ -13,9 +12,13 @@ namespace Google.CodeJam
                 {
                     using (StreamReader reader = new StreamReader(item))
                     {
-                        //new SpeakingInTongues().Solve(writer, reader);
-                        //new DancingWithTheGooglers().Solve(writer, reader);
-                        new RecycledNumbers().Solve(writer, reader);
+                        //new Google.CodeJam._2009.QualificationRound.AlienLanguage().Solve(writer, reader);
+                        //new Google.CodeJam._2009.QualificationRound.Watersheds().Solve(writer, reader);
+                        new Google.CodeJam._2009.QualificationRound.WelcomeToCodeJam().Solve(writer, reader);
+
+                        //new Google.CodeJam._2012.QualificationRound.SpeakingInTongues().Solve(writer, reader);
+                        //new Google.CodeJam._2012.QualificationRound.DancingWithTheGooglers().Solve(writer, reader);
+                        //new Google.CodeJam._2012.QualificationRound.RecycledNumbers().Solve(writer, reader);
                     }
                     File.Move(item, string.Format("{0}.processed", item));
                 }
