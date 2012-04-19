@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Google.CodeJam._2008.Round1A
 {
-    class Milkshakes : ISolver
+    class MilkshakesEventDrivenApproach : ISolver
     {
         class Customer
         {
@@ -27,12 +27,46 @@ namespace Google.CodeJam._2008.Round1A
             {
                 return this.Flavors.SingleOrDefault(f => f.Malted);
             }
+
+            public void FlavorChanged(object sender, EventArgs e)
+            {
+                var flavors = (IEnumerable<Flavor>)sender;
+                if (!IsSatisfiedBy(flavors))
+                {
+                    if (HasMaltedFlavor())
+                    {
+                        var malted = GetMaltedFlavor();
+                        var flavor = flavors.Single(f => f.Number == malted.Number);
+                        flavor.Malted = true;
+                    }
+                    else
+                        throw new Exception();
+                }
+            }
         }
 
         class Flavor : IEquatable<Flavor>
         {
             public int Number;
-            public bool Malted;
+
+            private bool malted;
+            public bool Malted
+            {
+                get
+                {
+                    return malted;
+                }
+                set
+                {
+                    malted = value;
+                    if (Changed != null)
+                        Changed(Parent, EventArgs.Empty);
+                }
+            }
+
+            public object Parent;
+
+            public event EventHandler Changed;
 
             public bool Equals(Flavor other)
             {
@@ -59,7 +93,7 @@ namespace Google.CodeJam._2008.Round1A
                 int N = int.Parse(reader.ReadLine());
                 var flavors = new List<Flavor>();
                 for (int n = 0; n < N; n++)
-                    flavors.Add(new Flavor() { Number = n + 1 });
+                    flavors.Add(new Flavor() { Number = n + 1, Parent = flavors });
 
                 int M = int.Parse(reader.ReadLine());
                 var customers = new List<Customer>();
@@ -71,35 +105,36 @@ namespace Google.CodeJam._2008.Round1A
 
                     var i = 0;
                     for (int t = 0; t < temp[0]; t++)
-                        customer.Flavors.Add(new Flavor() { Number = temp[++i], Malted = (temp[++i] == 1) });
-
-                    if (!customer.IsSatisfiedBy(flavors))
                     {
-                        do
+                        var flavor = new Flavor() { Number = temp[++i], Malted = (temp[++i] == 1) };
+                        flavors.Single(f => f.Number == flavor.Number).Changed += customer.FlavorChanged;
+                        customer.Flavors.Add(flavor);
+                    }
+                }
+
+                try
+                {
+                    foreach (var customer in customers)
+                    {
+                        if (!customer.IsSatisfiedBy(flavors))
                         {
-                            var unsatisfied = customers.First(cust => !cust.IsSatisfiedBy(flavors));
-                            if (!unsatisfied.HasMaltedFlavor())
+                            if (customer.HasMaltedFlavor())
+                            {
+                                var malted = customer.GetMaltedFlavor();
+                                var flavor = flavors.Single(f => f.Number == malted.Number);
+                                flavor.Malted = true;
+                            }
+                            else
                             {
                                 impossible = true;
                                 break;
                             }
-                            else
-                            {
-                                var malted = unsatisfied.GetMaltedFlavor();
-                                var flavor = flavors.Single(f => f.Number == malted.Number);
-                                flavor.Malted = true;
-                            }
-                        }
-                        while (customers.Any(cust => !cust.IsSatisfiedBy(flavors)));
-
-                        if (impossible)
-                        {
-                            for (int m2 = m + 1; m2 < M; m2++)
-                                reader.ReadLine();
-
-                            break;
                         }
                     }
+                }
+                catch (Exception)
+                {
+                    impossible = true;
                 }
 
                 if (impossible)
