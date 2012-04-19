@@ -12,9 +12,11 @@ namespace Google.CodeJam
                 {
                     using (StreamReader reader = new StreamReader(item))
                     {
+                        new Google.CodeJam._2008.Round1A.Milkshakes().Solve(writer, reader);
+
                         //new Google.CodeJam._2009.QualificationRound.AlienLanguage().Solve(writer, reader);
                         //new Google.CodeJam._2009.QualificationRound.Watersheds().Solve(writer, reader);
-                        new Google.CodeJam._2009.QualificationRound.WelcomeToCodeJam().Solve(writer, reader);
+                        //new Google.CodeJam._2009.QualificationRound.WelcomeToCodeJam().Solve(writer, reader);
 
                         //new Google.CodeJam._2012.QualificationRound.SpeakingInTongues().Solve(writer, reader);
                         //new Google.CodeJam._2012.QualificationRound.DancingWithTheGooglers().Solve(writer, reader);
