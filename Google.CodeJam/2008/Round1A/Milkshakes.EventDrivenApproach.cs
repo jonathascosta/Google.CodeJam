@@ -106,9 +106,10 @@ namespace Google.CodeJam._2008.Round1A
                     var i = 0;
                     for (int t = 0; t < temp[0]; t++)
                     {
-                        var flavor = new Flavor() { Number = temp[++i], Malted = (temp[++i] == 1) };
-                        flavors.Single(f => f.Number == flavor.Number).Changed += customer.FlavorChanged;
-                        customer.Flavors.Add(flavor);
+                        var custFlavor = new Flavor() { Number = temp[++i], Malted = (temp[++i] == 1) };
+                        var flavor = flavors.Single(f => f.Number == custFlavor.Number);
+                        flavor.Changed += customer.FlavorChanged;
+                        customer.Flavors.Add(custFlavor);
                     }
                 }
 

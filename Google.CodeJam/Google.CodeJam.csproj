@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="2008\Round1A\Milkshakes.cs" />
+    <Compile Include="2008\Round1A\MinimumScalarProduct.cs" />
     <Compile Include="2009\QualificationRound\AlienLanguage.cs" />
     <Compile Include="2009\QualificationRound\Watersheds.cs" />
     <Compile Include="2009\QualificationRound\WelcomeToCodeJam.cs" />
