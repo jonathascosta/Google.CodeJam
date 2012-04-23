@@ -37,6 +37,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,12 +47,14 @@
   <ItemGroup>
     <Compile Include="2008\Round1A\Milkshakes.cs" />
     <Compile Include="2008\Round1A\MinimumScalarProduct.cs" />
+    <Compile Include="2008\Round1A\Numbers.cs" />
     <Compile Include="2009\QualificationRound\AlienLanguage.cs" />
     <Compile Include="2009\QualificationRound\Watersheds.cs" />
     <Compile Include="2009\QualificationRound\WelcomeToCodeJam.cs" />
     <Compile Include="2012\QualificationRound\DancingWithTheGooglers.cs" />
     <Compile Include="2012\QualificationRound\RecycledNumbers.cs" />
     <Compile Include="2012\QualificationRound\SpeakingInTongues.cs" />
+    <Compile Include="Math\Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\ISolver.cs" />
