@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Google.CodeJam.Support;
 using System.IO;
-using Google.CodeJam.MathExtensions;
 using System.Numerics;
 
 namespace Google.CodeJam._2008.Round1A
