@@ -6,6 +6,8 @@ namespace Google.CodeJam
     {
         static void Main(string[] args)
         {
+            new Google.CodeJam.LuckyNumber().Solve(null, null);
+
             using (StreamWriter writer = new StreamWriter("result.out"))
             {
                 foreach (var item in Directory.GetFiles(".", "*.in"))
@@ -16,8 +18,8 @@ namespace Google.CodeJam
                         //new Google.CodeJam._2008.Round1A.Milkshakes().Solve(writer, reader);
                         //new Google.CodeJam._2008.Round1A.MilkshakesEventDrivenApproach().Solve(writer, reader);
                         //new Google.CodeJam._2008.Round1A.Numbers().Solve(writer, reader);
-                        
-                        new Google.CodeJam._2008.Round1B.CropTriangles().Solve(writer, reader);
+
+                        new Google.CodeJam.LuckyNumber().Solve(writer, reader);
 
                         //new Google.CodeJam._2009.QualificationRound.AlienLanguage().Solve(writer, reader);
                         //new Google.CodeJam._2009.QualificationRound.Watersheds().Solve(writer, reader);

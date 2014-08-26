@@ -55,6 +55,7 @@
     <Compile Include="2012\QualificationRound\DancingWithTheGooglers.cs" />
     <Compile Include="2012\QualificationRound\RecycledNumbers.cs" />
     <Compile Include="2012\QualificationRound\SpeakingInTongues.cs" />
+    <Compile Include="LuckyNumber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\ISolver.cs" />
